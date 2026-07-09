@@ -1,0 +1,1274 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Click Online Point | घर बैठे ऑनलाइन सरकारी एवं डिजिटल सेवाएं</title>
+<meta name="description" content="Click Online Point, Patna, Bihar — घर बैठे सभी ऑनलाइन सरकारी एवं डिजिटल सेवाओं की सुविधा। जाति, आय, आवासीय प्रमाण पत्र, आधार, पैन, स्कॉलरशिप, परीक्षा फॉर्म व टिकट बुकिंग।" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#2563EB; --primary-dark:#1D4ED8; --primary-light:#DBEAFE;
+  --secondary:#F97316; --secondary-light:#FFEDD5;
+  --bg:#F8FAFC; --surface:#FFFFFF; --surface-2:#F1F5F9;
+  --success:#22C55E; --success-light:#DCFCE7;
+  --danger:#EF4444; --danger-light:#FEE2E2;
+  --warning:#F59E0B; --warning-light:#FEF3C7;
+  --text:#0F172A; --text-muted:#64748B; --text-faint:#94A3B8;
+  --border:#E2E8F0;
+  --radius-sm:8px; --radius:14px; --radius-lg:22px;
+  --shadow-sm:0 2px 8px rgba(15,23,42,.06);
+  --shadow:0 8px 30px rgba(15,23,42,.08);
+  --shadow-lg:0 20px 60px rgba(15,23,42,.14);
+  --mono:'Roboto Mono', monospace;
+  --maxw:1200px;
+}
+[data-theme="dark"]{
+  --bg:#0A0F1C; --surface:#111827; --surface-2:#1A2333;
+  --text:#F1F5F9; --text-muted:#94A3B8; --text-faint:#64748B;
+  --border:#233047; --primary-light:#122347; --secondary-light:#2A1B0E;
+  --success-light:#0F2A1B; --danger-light:#2A1414; --warning-light:#2A2110;
+  --shadow-sm:0 2px 8px rgba(0,0,0,.35);
+  --shadow:0 8px 30px rgba(0,0,0,.45);
+  --shadow-lg:0 20px 60px rgba(0,0,0,.6);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);transition:background .3s,color .3s;-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;}
+input,select,textarea{font-family:inherit;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px;}
+::selection{background:var(--primary);color:#fff;}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important;}}
+
+/* Top utility bar */
+#topbar{background:var(--text);color:#E2E8F0;font-size:12.5px;}
+[data-theme="dark"] #topbar{background:#060A12;}
+#topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:34px;flex-wrap:wrap;gap:6px;}
+#topbar a{opacity:.9;display:inline-flex;align-items:center;gap:5px;}
+#topbar a:hover{opacity:1;color:var(--secondary);}
+#topbar .tb-right{display:flex;gap:16px;}
+@media (max-width:640px){#topbar .tb-left{display:none;}}
+
+/* Navbar */
+#navbar{position:sticky;top:0;z-index:100;background:var(--surface);border-bottom:1px solid var(--border);backdrop-filter:blur(8px);}
+#navbar .inner{display:flex;align-items:center;justify-content:space-between;height:68px;gap:18px;max-width:var(--maxw);margin:0 auto;padding:0 20px;}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;letter-spacing:-.2px;flex-shrink:0;}
+.brand img{width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px var(--primary-light);}
+.brand small{display:block;font-weight:500;font-size:10.5px;color:var(--text-muted);letter-spacing:.3px;}
+.navlinks{display:flex;gap:2px;align-items:center;}
+.navlinks a{padding:9px 14px;border-radius:99px;font-weight:500;font-size:14.5px;color:var(--text-muted);white-space:nowrap;transition:.2s;}
+.navlinks a:hover{background:var(--surface-2);color:var(--text);}
+.navlinks a.active{background:var(--primary);color:#fff;}
+.nav-actions{display:flex;align-items:center;gap:8px;}
+.icon-btn{width:40px;height:40px;border-radius:50%;border:1px solid var(--border);background:var(--surface);display:flex;align-items:center;justify-content:center;color:var(--text);transition:.2s;flex-shrink:0;}
+.icon-btn:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-1px);}
+.hamburger{display:none;}
+@media (max-width:980px){
+  .navlinks{display:none;}
+  .hamburger{display:flex;}
+}
+#mobileMenu{position:fixed;inset:0;background:rgba(15,23,42,.55);z-index:200;display:none;}
+#mobileMenu.open{display:block;}
+#mobileMenu .panel{position:absolute;right:0;top:0;bottom:0;width:280px;background:var(--surface);padding:22px;display:flex;flex-direction:column;gap:4px;box-shadow:var(--shadow-lg);animation:slideIn .25s ease;}
+@keyframes slideIn{from{transform:translateX(20px);opacity:0;}to{transform:translateX(0);opacity:1;}}
+#mobileMenu a{padding:13px 14px;border-radius:10px;font-weight:500;color:var(--text);}
+#mobileMenu a.active{background:var(--primary);color:#fff;}
+#mobileMenu .closeX{align-self:flex-end;margin-bottom:6px;}
+
+/* search overlay */
+#searchOverlay{position:fixed;inset:0;background:rgba(15,23,42,.5);z-index:300;display:none;padding:80px 16px;}
+#searchOverlay.open{display:block;}
+.search-box{max-width:640px;margin:0 auto;background:var(--surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);overflow:hidden;animation:slideIn .2s ease;}
+.search-box input{width:100%;border:none;padding:22px 24px;font-size:17px;background:transparent;color:var(--text);outline:none;border-bottom:1px solid var(--border);}
+.search-results{max-height:340px;overflow-y:auto;}
+.search-results .sr-item{display:flex;align-items:center;gap:12px;padding:14px 22px;border-bottom:1px solid var(--border);}
+.search-results .sr-item:hover{background:var(--surface-2);}
+.search-empty{padding:26px;text-align:center;color:var(--text-muted);font-size:14px;}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;border-radius:99px;font-weight:600;font-size:14.5px;border:none;transition:.2s;white-space:nowrap;}
+.btn-primary{background:var(--primary);color:#fff;box-shadow:0 6px 20px rgba(37,99,235,.35);}
+.btn-primary:hover{background:var(--primary-dark);transform:translateY(-2px);}
+.btn-secondary{background:var(--secondary);color:#fff;box-shadow:0 6px 20px rgba(249,115,22,.3);}
+.btn-secondary:hover{filter:brightness(.94);transform:translateY(-2px);}
+.btn-outline{background:transparent;border:1.5px solid var(--border);color:var(--text);}
+.btn-outline:hover{border-color:var(--primary);color:var(--primary);}
+.btn-block{width:100%;}
+.btn:disabled{opacity:.55;cursor:not-allowed;transform:none !important;}
+
+/* Hero */
+.hero{padding:64px 0 40px;overflow:hidden;position:relative;}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center;}
+@media (max-width:940px){.hero .wrap{grid-template-columns:1fr;}}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--primary-light);color:var(--primary-dark);padding:7px 16px;border-radius:99px;font-size:12.5px;font-weight:600;letter-spacing:.3px;}
+[data-theme="dark"] .eyebrow{color:#93C5FD;}
+.hero h1{font-size:clamp(28px,4vw,44px);line-height:1.22;font-weight:800;margin:18px 0 16px;letter-spacing:-.5px;}
+.hero .accent{color:var(--primary);}
+.hero p.sub{font-size:16.5px;color:var(--text-muted);line-height:1.7;margin-bottom:28px;max-width:560px;}
+.hero .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:30px;}
+.trustrow{display:flex;gap:22px;flex-wrap:wrap;}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-muted);font-weight:500;}
+.trust-item .dot{width:8px;height:8px;border-radius:50%;background:var(--success);flex-shrink:0;}
+
+/* hero visual - signature tracker card */
+.tracker-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);padding:26px;position:relative;}
+.tracker-card::before{content:"आवेदन ट्रैकर";position:absolute;top:-13px;left:26px;background:var(--primary);color:#fff;font-size:11.5px;font-weight:700;padding:5px 14px;border-radius:99px;letter-spacing:.3px;}
+.tracker-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;padding-top:6px;}
+.tracker-head .id{font-family:var(--mono);font-weight:700;font-size:14px;color:var(--primary);}
+.tracker-head .svc{font-size:12.5px;color:var(--text-muted);}
+.steps{display:flex;flex-direction:column;gap:0;}
+.step{display:flex;gap:14px;position:relative;padding-bottom:26px;}
+.step:last-child{padding-bottom:0;}
+.step .num{width:32px;height:32px;border-radius:50%;background:var(--success);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13.5px;flex-shrink:0;z-index:1;}
+.step.pending .num{background:var(--surface-2);color:var(--text-faint);border:2px solid var(--border);}
+.step:not(:last-child)::after{content:"";position:absolute;left:15.5px;top:32px;bottom:0;width:2px;background:var(--success);}
+.step.pending:not(:last-child)::after{background:var(--border);}
+.step .txt strong{display:block;font-size:14px;margin-bottom:2px;}
+.step .txt span{font-size:12.5px;color:var(--text-muted);}
+
+/* Section generic */
+.section{padding:64px 0;}
+.section-head{text-align:center;max-width:640px;margin:0 auto 42px;}
+.section-head h2{font-size:clamp(24px,3vw,34px);font-weight:800;margin:12px 0 10px;letter-spacing:-.4px;}
+.section-head p{color:var(--text-muted);font-size:15.5px;line-height:1.7;}
+.section-head .eyebrow{margin-bottom:6px;}
+.bg-alt{background:var(--surface-2);}
+
+/* how it works */
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+@media (max-width:900px){.steps-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:560px){.steps-grid{grid-template-columns:1fr;}}
+.hiw-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:26px 22px;position:relative;transition:.25s;}
+.hiw-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
+.hiw-card .no{font-family:var(--mono);font-size:13px;color:var(--primary);font-weight:700;}
+.hiw-card h4{font-size:16px;margin:10px 0 6px;font-weight:700;}
+.hiw-card p{font-size:13.5px;color:var(--text-muted);line-height:1.6;margin:0;}
+
+/* services grid */
+.filters{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:32px;}
+.chip{padding:9px 18px;border-radius:99px;border:1.5px solid var(--border);font-size:13.5px;font-weight:500;color:var(--text-muted);background:var(--surface);transition:.2s;}
+.chip:hover{border-color:var(--primary);color:var(--primary);}
+.chip.active{background:var(--primary);border-color:var(--primary);color:#fff;}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px;}
+.svc-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px;transition:.25s;position:relative;}
+.svc-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:var(--primary);}
+.svc-card .ic{width:52px;height:52px;border-radius:14px;background:var(--primary-light);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:14px;}
+.svc-card h4{font-size:15.5px;font-weight:700;margin:0 0 5px;line-height:1.35;}
+.svc-card .cat{font-size:11.5px;color:var(--text-faint);font-weight:600;text-transform:uppercase;letter-spacing:.4px;}
+.svc-card .meta{display:flex;justify-content:space-between;margin-top:14px;font-size:12px;color:var(--text-muted);border-top:1px dashed var(--border);padding-top:12px;}
+.svc-card .go{position:absolute;top:20px;right:18px;color:var(--text-faint);transition:.2s;}
+.svc-card:hover .go{color:var(--primary);transform:translateX(3px);}
+.no-results{grid-column:1/-1;text-align:center;padding:50px 0;color:var(--text-muted);}
+
+/* Service detail */
+.breadcrumbs{font-size:13px;color:var(--text-muted);margin-bottom:18px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
+.breadcrumbs a:hover{color:var(--primary);}
+.svc-hero{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;margin-bottom:30px;}
+.svc-hero .ic-lg{width:74px;height:74px;border-radius:18px;background:var(--primary-light);display:flex;align-items:center;justify-content:center;font-size:34px;flex-shrink:0;}
+.svc-hero h1{font-size:clamp(22px,3vw,30px);font-weight:800;margin:0 0 8px;letter-spacing:-.4px;}
+.svc-hero p{color:var(--text-muted);font-size:15px;line-height:1.7;max-width:640px;margin:0;}
+.meta-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px;}
+@media (max-width:700px){.meta-cards{grid-template-columns:1fr;}}
+.meta-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;}
+.meta-card .lbl{font-size:12px;color:var(--text-faint);font-weight:600;text-transform:uppercase;letter-spacing:.4px;margin-bottom:6px;}
+.meta-card .val{font-size:18px;font-weight:700;}
+.meta-card.charge .val{color:var(--secondary);}
+.doclist{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:36px;}
+@media (max-width:600px){.doclist{grid-template-columns:1fr;}}
+.doclist li{list-style:none;display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:12px 14px;font-size:13.5px;}
+.doclist li .chk{width:20px;height:20px;border-radius:50%;background:var(--success-light);color:var(--success);display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;}
+
+/* form */
+.form-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;box-shadow:var(--shadow-sm);}
+.form-card h3{font-size:19px;font-weight:700;margin:0 0 4px;}
+.form-card .sub{color:var(--text-muted);font-size:13.5px;margin-bottom:24px;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+@media (max-width:640px){.grid2{grid-template-columns:1fr;}}
+.field{margin-bottom:18px;}
+.field label{display:block;font-size:13.5px;font-weight:600;margin-bottom:7px;}
+.field label .req{color:var(--danger);}
+.field input,.field select,.field textarea{width:100%;padding:12px 14px;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);color:var(--text);font-size:14px;outline:none;transition:.2s;}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--primary);background:var(--surface);box-shadow:0 0 0 4px var(--primary-light);}
+.field input.err,.field select.err{border-color:var(--danger);}
+.field .errmsg{color:var(--danger);font-size:12px;margin-top:6px;display:none;}
+.field .errmsg.show{display:block;}
+.field .hint{font-size:11.5px;color:var(--text-faint);margin-top:5px;}
+.section-title{font-size:14.5px;font-weight:700;margin:28px 0 14px;padding-top:22px;border-top:1px dashed var(--border);display:flex;align-items:center;gap:8px;}
+.section-title:first-of-type{border-top:none;padding-top:0;margin-top:0;}
+
+/* upload */
+.upload-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;}
+.dropzone{border:2px dashed var(--border);border-radius:var(--radius);padding:20px 14px;text-align:center;transition:.2s;position:relative;background:var(--bg);min-height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;}
+.dropzone.drag{border-color:var(--primary);background:var(--primary-light);}
+.dropzone .dz-ic{font-size:24px;}
+.dropzone .dz-label{font-size:12.5px;font-weight:600;}
+.dropzone .dz-hint{font-size:10.5px;color:var(--text-faint);}
+.dropzone input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;}
+.dropzone .preview{position:absolute;inset:0;border-radius:12px;overflow:hidden;background:var(--surface);}
+.dropzone .preview img{width:100%;height:100%;object-fit:cover;}
+.dropzone .preview .filebadge{position:absolute;bottom:0;left:0;right:0;background:rgba(15,23,42,.75);color:#fff;font-size:10.5px;padding:6px 8px;text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.dropzone .rm{position:absolute;top:6px;right:6px;width:24px;height:24px;border-radius:50%;background:rgba(15,23,42,.65);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;z-index:2;border:none;}
+.docs-multi{display:flex;flex-direction:column;gap:8px;margin-top:10px;}
+.doc-chip{display:flex;align-items:center;gap:8px;background:var(--surface-2);border-radius:8px;padding:8px 12px;font-size:12.5px;}
+.doc-chip button{background:none;border:none;color:var(--danger);font-weight:700;margin-left:auto;}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--text-muted);margin:22px 0;}
+.consent input{margin-top:3px;}
+
+/* Success card */
+.success-card{text-align:center;padding:50px 30px;background:var(--surface);border-radius:var(--radius-lg);border:1px solid var(--border);box-shadow:var(--shadow);}
+.success-icon{width:76px;height:76px;border-radius:50%;background:var(--success-light);color:var(--success);display:flex;align-items:center;justify-content:center;font-size:38px;margin:0 auto 20px;}
+.appid-box{display:inline-flex;align-items:center;gap:12px;background:var(--surface-2);border:1.5px dashed var(--primary);border-radius:12px;padding:14px 22px;margin:18px 0;font-family:var(--mono);font-size:19px;font-weight:700;color:var(--primary);}
+.appid-box button{background:var(--primary);color:#fff;border:none;border-radius:8px;padding:8px 12px;font-size:12px;font-weight:600;}
+
+/* About / FAQ / Contact */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;}
+@media (max-width:900px){.about-grid{grid-template-columns:1fr;}}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px;}
+.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center;}
+.stat-card .num{font-size:26px;font-weight:800;color:var(--primary);}
+.stat-card .lbl{font-size:12px;color:var(--text-muted);margin-top:4px;}
+.value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+@media (max-width:800px){.value-grid{grid-template-columns:1fr;}}
+.value-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;}
+.value-card .vi{font-size:26px;margin-bottom:10px;}
+.value-card h4{margin:0 0 6px;font-size:15.5px;}
+.value-card p{margin:0;font-size:13.5px;color:var(--text-muted);line-height:1.6;}
+.disclaimer-box{background:var(--warning-light);border:1px solid var(--warning);border-radius:var(--radius);padding:18px 20px;font-size:13px;color:var(--text);line-height:1.7;margin-top:26px;}
+
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:12px;overflow:hidden;}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:18px 22px;font-weight:600;font-size:14.5px;}
+.faq-q .plus{transition:.25s;color:var(--primary);font-size:18px;}
+.faq-item.open .plus{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease;padding:0 22px;}
+.faq-item.open .faq-a{max-height:300px;padding:0 22px 20px;}
+.faq-a p{margin:0;color:var(--text-muted);font-size:13.5px;line-height:1.7;}
+
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:30px;}
+@media (max-width:860px){.contact-grid{grid-template-columns:1fr;}}
+.contact-info-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;}
+.ci-row{display:flex;gap:14px;align-items:flex-start;margin-bottom:22px;}
+.ci-row .ic{width:42px;height:42px;border-radius:12px;background:var(--primary-light);color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.ci-row h5{margin:0 0 3px;font-size:14px;}
+.ci-row p{margin:0;font-size:13px;color:var(--text-muted);}
+.map-embed{border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);margin-top:20px;height:180px;}
+.map-embed iframe{width:100%;height:100%;border:0;}
+
+/* Dashboard / admin */
+.dash-search{display:flex;gap:12px;max-width:460px;margin:0 auto 40px;flex-wrap:wrap;}
+.dash-search input{flex:1;min-width:200px;}
+.app-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;margin-bottom:14px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center;}
+.app-card .l h4{margin:0 0 4px;font-size:15px;}
+.app-card .l .idm{font-family:var(--mono);font-size:12.5px;color:var(--text-muted);}
+.status-badge{padding:6px 14px;border-radius:99px;font-size:12px;font-weight:700;}
+.status-Pending{background:var(--warning-light);color:#B45309;}
+.status-Approved{background:var(--success-light);color:#15803D;}
+.status-Completed{background:var(--primary-light);color:var(--primary-dark);}
+.status-Rejected{background:var(--danger-light);color:#B91C1C;}
+
+.admin-login{max-width:380px;margin:60px auto;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:36px;text-align:center;box-shadow:var(--shadow);}
+.admin-toolbar{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:22px;align-items:center;}
+.admin-toolbar input,.admin-toolbar select{padding:10px 14px;border:1.5px solid var(--border);border-radius:10px;background:var(--surface);color:var(--text);font-size:13.5px;}
+.admin-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:26px;}
+@media (max-width:800px){.admin-stats{grid-template-columns:repeat(2,1fr);}}
+.astat{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px;text-align:center;}
+.astat b{font-size:22px;display:block;color:var(--primary);}
+.astat span{font-size:11.5px;color:var(--text-muted);}
+.tbl-wrap{overflow-x:auto;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);}
+table.admintbl{width:100%;border-collapse:collapse;font-size:13px;min-width:820px;}
+table.admintbl th{text-align:left;padding:14px 16px;background:var(--surface-2);font-weight:700;font-size:11.5px;text-transform:uppercase;letter-spacing:.3px;color:var(--text-muted);white-space:nowrap;}
+table.admintbl td{padding:13px 16px;border-top:1px solid var(--border);vertical-align:middle;}
+table.admintbl select{padding:6px 8px;border-radius:8px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:12.5px;}
+.tbl-actions{display:flex;gap:6px;}
+.tbl-actions button{border:1px solid var(--border);background:var(--surface);border-radius:8px;padding:6px 9px;font-size:12px;}
+.tbl-actions button:hover{border-color:var(--primary);color:var(--primary);}
+.tbl-actions button.danger:hover{border-color:var(--danger);color:var(--danger);}
+
+/* modal */
+.modal-bg{position:fixed;inset:0;background:rgba(15,23,42,.6);z-index:400;display:none;align-items:center;justify-content:center;padding:20px;}
+.modal-bg.open{display:flex;}
+.modal{background:var(--surface);border-radius:var(--radius-lg);max-width:640px;width:100%;max-height:88vh;overflow-y:auto;padding:28px;box-shadow:var(--shadow-lg);animation:slideIn .2s ease;}
+.modal h3{margin-top:0;}
+.modal .closeX{float:right;}
+.doc-preview-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;}
+.doc-preview-row .dp{width:90px;}
+.doc-preview-row .dp img{width:90px;height:90px;object-fit:cover;border-radius:8px;border:1px solid var(--border);}
+.doc-preview-row .dp .nm{font-size:10px;text-align:center;color:var(--text-muted);margin-top:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+
+/* Footer */
+footer{background:var(--text);color:#CBD5E1;padding:50px 0 22px;margin-top:20px;}
+[data-theme="dark"] footer{background:#060A12;}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:34px;margin-bottom:34px;}
+@media (max-width:800px){.footer-grid{grid-template-columns:1fr 1fr;}}
+@media (max-width:480px){.footer-grid{grid-template-columns:1fr;}}
+footer h5{color:#fff;font-size:14px;margin:0 0 16px;}
+footer p, footer a{font-size:13px;color:#94A3B8;line-height:2;}
+footer a:hover{color:var(--secondary);}
+.footer-bottom{border-top:1px solid #1E293B;padding-top:20px;text-align:center;font-size:12px;color:#64748B;}
+.social-row{display:flex;gap:10px;margin-top:14px;}
+.social-row a{width:36px;height:36px;border-radius:50%;background:#1E293B;display:flex;align-items:center;justify-content:center;color:#fff;}
+.social-row a:hover{background:var(--secondary);}
+
+/* Floating buttons */
+.fab-stack{position:fixed;right:20px;bottom:22px;display:flex;flex-direction:column;gap:12px;z-index:150;}
+.fab{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:var(--shadow-lg);color:#fff;transition:.2s;}
+.fab:hover{transform:scale(1.08);}
+.fab.wa{background:#25D366;}
+.fab.call{background:var(--primary);}
+.fab .ping{position:absolute;width:56px;height:56px;border-radius:50%;background:#25D366;opacity:.55;animation:ping 2s infinite;}
+@keyframes ping{0%{transform:scale(1);opacity:.5;}100%{transform:scale(1.7);opacity:0;}}
+
+/* toast */
+#toastContainer{position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:500;display:flex;flex-direction:column;gap:10px;}
+.toast{background:var(--text);color:#fff;padding:13px 22px;border-radius:99px;font-size:13.5px;font-weight:500;box-shadow:var(--shadow-lg);animation:toastIn .25s ease;display:flex;align-items:center;gap:8px;}
+@keyframes toastIn{from{transform:translateY(-14px);opacity:0;}to{transform:translateY(0);opacity:1;}}
+.toast.err{background:var(--danger);}
+.toast.ok{background:var(--success);}
+
+/* misc */
+.reveal{animation:fadeUp .5s ease both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+.page-title{text-align:center;padding:50px 0 10px;}
+.page-title .eyebrow{margin-bottom:10px;}
+.page-title h1{font-size:clamp(24px,3.4vw,36px);font-weight:800;letter-spacing:-.4px;margin:0 0 10px;}
+.page-title p{color:var(--text-muted);max-width:600px;margin:0 auto;font-size:14.5px;line-height:1.7;}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+@media (max-width:860px){.testi-grid{grid-template-columns:1fr;}}
+.testi-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px;}
+.testi-card .stars{color:var(--secondary);font-size:13px;margin-bottom:10px;}
+.testi-card p{font-size:13.5px;color:var(--text-muted);line-height:1.7;margin:0 0 14px;}
+.testi-card .who{display:flex;align-items:center;gap:10px;}
+.testi-card .av{width:36px;height:36px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;}
+.testi-card .who b{display:block;font-size:13px;}
+.testi-card .who span{font-size:11.5px;color:var(--text-faint);}
+</style>
+</head>
+<body data-theme="light">
+
+<div id="topbar">
+  <div class="wrap">
+    <div class="tb-left" style="display:flex;gap:16px;">
+      <span>📍 Patna, Bihar</span>
+      <a href="tel:+916287059861">📞 +91 62870 59861</a>
+    </div>
+    <div class="tb-right">
+      <a href="https://instagram.com/Click_online_point" target="_blank" rel="noopener">📷 @Click_online_point</a>
+      <a href="https://wa.me/916287059861" target="_blank" rel="noopener">💬 WhatsApp सहायता</a>
+    </div>
+  </div>
+</div>
+
+<nav id="navbar">
+  <div class="inner">
+    <a href="#/home" class="brand">
+      <img src="data:image/jpeg;base64,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" alt="Click Online Point logo" />
+      <span>Click Online Point<small>घर बैठे सभी ऑनलाइन सेवाएं</small></span>
+    </a>
+    <div class="navlinks" id="navlinksDesktop"></div>
+    <div class="nav-actions">
+      <button class="icon-btn" id="searchBtn" title="सेवा खोजें" aria-label="Search">🔍</button>
+      <button class="icon-btn" id="themeBtn" title="Dark mode" aria-label="Toggle theme">🌙</button>
+      <button class="icon-btn hamburger" id="hamburgerBtn" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</nav>
+
+<div id="mobileMenu">
+  <div class="panel">
+    <button class="icon-btn closeX" id="closeMobileMenu">✕</button>
+    <div id="navlinksMobile"></div>
+  </div>
+</div>
+
+<div id="searchOverlay">
+  <div class="search-box">
+    <input id="searchInput" placeholder="सेवा खोजें... जैसे Aadhaar, PAN, Scholarship" autocomplete="off"/>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<main id="app"></main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="color:#fff;margin-bottom:14px;">
+          <img src="data:image/jpeg;base64,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" alt="logo"/>
+          <span style="color:#fff;">Click Online Point</span>
+        </div>
+        <p>घर बैठे सभी ऑनलाइन सरकारी एवं डिजिटल सेवाओं की सुविधा। हम एक निजी डिजिटल सेवा केंद्र हैं जो नागरिकों को ऑनलाइन आवेदन में सहायता प्रदान करते हैं।</p>
+        <div class="social-row">
+          <a href="https://instagram.com/Click_online_point" target="_blank" rel="noopener">📷</a>
+          <a href="https://wa.me/916287059861" target="_blank" rel="noopener">💬</a>
+          <a href="tel:+916287059861">📞</a>
+        </div>
+      </div>
+      <div>
+        <h5>क्विक लिंक</h5>
+        <div style="display:flex;flex-direction:column;">
+          <a href="#/home">होम</a>
+          <a href="#/services">सेवाएं</a>
+          <a href="#/about">हमारे बारे में</a>
+          <a href="#/faq">सामान्य प्रश्न</a>
+          <a href="#/contact">संपर्क करें</a>
+        </div>
+      </div>
+      <div>
+        <h5>लोकप्रिय सेवाएं</h5>
+        <div id="footerPopular" style="display:flex;flex-direction:column;"></div>
+      </div>
+      <div>
+        <h5>संपर्क जानकारी</h5>
+        <p>📍 Patna, Bihar, India</p>
+        <p>📞 +91 62870 59861</p>
+        <p>📷 @Click_online_point</p>
+        <p style="margin-top:14px;"><a href="#/dashboard">मेरा आवेदन देखें →</a></p>
+        <p><a href="#/admin">एडमिन लॉगिन →</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Click Online Point, Patna. सर्वाधिकार सुरक्षित। यह एक निजी डिजिटल सेवा केंद्र है — भारत सरकार से संबद्ध नहीं।
+    </div>
+  </div>
+</footer>
+
+<div class="fab-stack">
+  <a class="fab wa" href="https://wa.me/916287059861?text=नमस्ते%2C%20मुझे%20Click%20Online%20Point%20से%20सेवा%20चाहिए।" target="_blank" rel="noopener" title="WhatsApp Support" aria-label="WhatsApp"><span class="ping"></span>💬</a>
+  <a class="fab call" href="tel:+916287059861" title="Call Now" aria-label="Call Now">📞</a>
+</div>
+
+<div id="toastContainer"></div>
+<div class="modal-bg" id="modalBg"><div class="modal" id="modalContent"></div></div>
+
+<script>
+/* ================= DATA ================= */
+const NAV = [
+  {href:'#/home', label:'होम'},
+  {href:'#/services', label:'सेवाएं'},
+  {href:'#/about', label:'हमारे बारे में'},
+  {href:'#/faq', label:'सामान्य प्रश्न'},
+  {href:'#/contact', label:'संपर्क'},
+  {href:'#/dashboard', label:'मेरा आवेदन'},
+];
+
+const DOC_COMMON = { aadhaar:"आधार कार्ड की छायाप्रति", photo:"पासपोर्ट साइज़ फोटो", signature:"हस्ताक्षर", mobile:"मोबाइल नंबर (OTP हेतु)" };
+
+const SERVICES = [
+ {id:'caste-certificate',cat:'Certificates',catHi:'प्रमाण पत्र',icon:'📜',name:'Caste Certificate',nameHi:'जाति प्रमाण पत्र',desc:'सरकारी योजनाओं, आरक्षण व छात्रवृत्ति हेतु आवश्यक जाति प्रमाण पत्र के लिए ऑनलाइन आवेदन सहायता।',time:'5-7 कार्य दिवस',charge:'₹80 सेवा शुल्क',docs:['आधार कार्ड','राशन कार्ड','निवास प्रमाण','पासपोर्ट फोटो','पुराना जाति प्रमाण पत्र (यदि हो)']},
+ {id:'income-certificate',cat:'Certificates',catHi:'प्रमाण पत्र',icon:'💰',name:'Income Certificate',nameHi:'आय प्रमाण पत्र',desc:'छात्रवृत्ति, ऋण व सरकारी योजनाओं के लिए आवश्यक आय प्रमाण पत्र बनवाने में सहायता।',time:'5-7 कार्य दिवस',charge:'₹80 सेवा शुल्क',docs:['आधार कार्ड','सैलरी स्लिप/स्व-घोषणा','निवास प्रमाण','पासपोर्ट फोटो']},
+ {id:'residential-certificate',cat:'Certificates',catHi:'प्रमाण पत्र',icon:'🏠',name:'Residential Certificate',nameHi:'आवासीय प्रमाण पत्र',desc:'स्थायी निवास का प्रमाण देने वाला आवासीय प्रमाण पत्र ऑनलाइन आवेदन।',time:'5-7 कार्य दिवस',charge:'₹80 सेवा शुल्क',docs:['आधार कार्ड','बिजली बिल/राशन कार्ड','पासपोर्ट फोटो']},
+ {id:'ews-certificate',cat:'Certificates',catHi:'प्रमाण पत्र',icon:'🧾',name:'EWS Certificate',nameHi:'EWS प्रमाण पत्र',desc:'आर्थिक रूप से कमजोर वर्ग (EWS) प्रमाण पत्र हेतु ऑनलाइन आवेदन प्रक्रिया।',time:'7-10 कार्य दिवस',charge:'₹100 सेवा शुल्क',docs:['आधार कार्ड','आय प्रमाण पत्र','निवास प्रमाण','पासपोर्ट फोटो']},
+ {id:'character-certificate',cat:'Certificates',catHi:'प्रमाण पत्र',icon:'🕊️',name:'Character Certificate',nameHi:'चरित्र प्रमाण पत्र',desc:'नौकरी व शैक्षणिक प्रवेश हेतु आवश्यक चरित्र प्रमाण पत्र बनाने में सहायता।',time:'5-7 कार्य दिवस',charge:'₹80 सेवा शुल्क',docs:['आधार कार्ड','निवास प्रमाण','पासपोर्ट फोटो']},
+ {id:'aadhaar-services',cat:'Identity',catHi:'पहचान सेवाएं',icon:'🆔',name:'Aadhaar Services',nameHi:'आधार सेवाएं',desc:'आधार में नाम, पता, मोबाइल अपडेट व नया आधार आवेदन जैसी सेवाओं में सहायता।',time:'1-3 कार्य दिवस',charge:'₹50 सेवा शुल्क',docs:['मूल आधार कार्ड','पते का प्रमाण','मोबाइल नंबर','पासपोर्ट फोटो']},
+ {id:'pan-card',cat:'Identity',catHi:'पहचान सेवाएं',icon:'💳',name:'PAN Card',nameHi:'पैन कार्ड',desc:'नया पैन कार्ड आवेदन व सुधार हेतु ऑनलाइन सहायता।',time:'7-10 कार्य दिवस',charge:'₹120 सेवा शुल्क',docs:['आधार कार्ड','पासपोर्ट फोटो','हस्ताक्षर']},
+ {id:'voter-id',cat:'Identity',catHi:'पहचान सेवाएं',icon:'🗳️',name:'Voter ID',nameHi:'मतदाता पहचान पत्र',desc:'नया वोटर आईडी बनवाने व सुधार हेतु ऑनलाइन आवेदन सहायता।',time:'15-20 कार्य दिवस',charge:'₹80 सेवा शुल्क',docs:['आधार कार्ड','निवास प्रमाण','पासपोर्ट फोटो','जन्म तिथि प्रमाण']},
+ {id:'driving-licence',cat:'Identity',catHi:'पहचान सेवाएं',icon:'🚘',name:'Driving Licence',nameHi:'ड्राइविंग लाइसेंस',desc:'लर्निंग व परमानेंट ड्राइविंग लाइसेंस हेतु ऑनलाइन आवेदन व स्लॉट बुकिंग सहायता।',time:'10-15 कार्य दिवस',charge:'₹150 सेवा शुल्क',docs:['आधार कार्ड','पासपोर्ट फोटो','जन्म तिथि प्रमाण','निवास प्रमाण']},
+ {id:'scholarship',cat:'Education',catHi:'शिक्षा',icon:'🎓',name:'Scholarship',nameHi:'छात्रवृत्ति आवेदन',desc:'राज्य व केंद्र सरकार की छात्रवृत्ति योजनाओं हेतु ऑनलाइन आवेदन सहायता।',time:'3-5 कार्य दिवस',charge:'₹60 सेवा शुल्क',docs:['आधार कार्ड','आय प्रमाण पत्र','जाति प्रमाण पत्र (यदि लागू)','मार्कशीट','बैंक पासबुक']},
+ {id:'admission-form',cat:'Education',catHi:'शिक्षा',icon:'🏫',name:'Admission Form',nameHi:'एडमिशन फॉर्म',desc:'स्कूल, कॉलेज व विश्वविद्यालय एडमिशन फॉर्म भरने में पूर्ण सहायता।',time:'1-2 कार्य दिवस',charge:'₹60 सेवा शुल्क',docs:['आधार कार्ड','अंतिम मार्कशीट','पासपोर्ट फोटो','हस्ताक्षर']},
+ {id:'exam-form',cat:'Education',catHi:'शिक्षा',icon:'📝',name:'Exam Form',nameHi:'परीक्षा फॉर्म',desc:'बोर्ड व प्रतियोगी परीक्षा फॉर्म भरने व फीस भुगतान में सहायता।',time:'1-2 कार्य दिवस',charge:'₹60 सेवा शुल्क',docs:['आधार कार्ड','मार्कशीट','पासपोर्ट फोटो','हस्ताक्षर']},
+ {id:'ssc',cat:'Govt Exams',catHi:'सरकारी परीक्षा',icon:'📋',name:'SSC',nameHi:'एसएससी फॉर्म',desc:'SSC CGL, CHSL, MTS सहित सभी SSC भर्ती फॉर्म भरने में सहायता।',time:'1-2 कार्य दिवस',charge:'₹70 सेवा शुल्क',docs:['आधार कार्ड','शैक्षणिक प्रमाण पत्र','पासपोर्ट फोटो','हस्ताक्षर']},
+ {id:'railway',cat:'Govt Exams',catHi:'सरकारी परीक्षा',icon:'🚂',name:'Railway',nameHi:'रेलवे भर्ती फॉर्म',desc:'RRB NTPC, ग्रुप डी व अन्य रेलवे भर्ती फॉर्म भरने में सहायता।',time:'1-2 कार्य दिवस',charge:'₹70 सेवा शुल्क',docs:['आधार कार्ड','शैक्षणिक प्रमाण पत्र','पासपोर्ट फोटो','हस्ताक्षर']},
+ {id:'upsc',cat:'Govt Exams',catHi:'सरकारी परीक्षा',icon:'🏛️',name:'UPSC',nameHi:'यूपीएससी फॉर्म',desc:'UPSC सिविल सेवा व अन्य परीक्षाओं हेतु फॉर्म भरने में सहायता।',time:'1-2 कार्य दिवस',charge:'₹90 सेवा शुल्क',docs:['आधार कार्ड','शैक्षणिक प्रमाण पत्र','पासपोर्ट फोटो','हस्ताक्षर']},
+ {id:'bihar-police',cat:'Govt Exams',catHi:'सरकारी परीक्षा',icon:'👮',name:'Bihar Police',nameHi:'बिहार पुलिस भर्ती',desc:'बिहार पुलिस कांस्टेबल व अन्य भर्ती फॉर्म भरने में सहायता।',time:'1-2 कार्य दिवस',charge:'₹70 सेवा शुल्क',docs:['आधार कार्ड','शैक्षणिक प्रमाण पत्र','पासपोर्ट फोटो','हस्ताक्षर']},
+ {id:'bssc',cat:'Govt Exams',catHi:'सरकारी परीक्षा',icon:'📑',name:'BSSC',nameHi:'बिहार SSC फॉर्म',desc:'बिहार कर्मचारी चयन आयोग की भर्तियों हेतु फॉर्म भरने में सहायता।',time:'1-2 कार्य दिवस',charge:'₹70 सेवा शुल्क',docs:['आधार कार्ड','शैक्षणिक प्रमाण पत्र','पासपोर्ट फोटो','हस्ताक्षर']},
+ {id:'btsc',cat:'Govt Exams',catHi:'सरकारी परीक्षा',icon:'🩺',name:'BTSC',nameHi:'बिहार टेक्निकल सर्विस कमीशन',desc:'बिहार तकनीकी सेवा आयोग की भर्तियों हेतु फॉर्म भरने में सहायता।',time:'1-2 कार्य दिवस',charge:'₹70 सेवा शुल्क',docs:['आधार कार्ड','शैक्षणिक प्रमाण पत्र','पासपोर्ट फोटो','हस्ताक्षर']},
+ {id:'banking-forms',cat:'Govt Exams',catHi:'सरकारी परीक्षा',icon:'🏦',name:'Banking Forms',nameHi:'बैंकिंग फॉर्म',desc:'IBPS, SBI व अन्य बैंकिंग भर्ती परीक्षाओं हेतु फॉर्म भरने में सहायता।',time:'1-2 कार्य दिवस',charge:'₹70 सेवा शुल्क',docs:['आधार कार्ड','शैक्षणिक प्रमाण पत्र','पासपोर्ट फोटो','हस्ताक्षर']},
+ {id:'train-ticket',cat:'Travel',catHi:'यात्रा सेवाएं',icon:'🚆',name:'Train Ticket',nameHi:'रेल टिकट बुकिंग',desc:'IRCTC रेल टिकट बुकिंग व तत्काल बुकिंग सहायता।',time:'तुरंत',charge:'₹30 प्रति टिकट सेवा शुल्क',docs:['यात्री का नाम व उम्र','आईडी प्रमाण','मोबाइल नंबर']},
+ {id:'bus-ticket',cat:'Travel',catHi:'यात्रा सेवाएं',icon:'🚌',name:'Bus Ticket',nameHi:'बस टिकट बुकिंग',desc:'राज्य व निजी बस टिकट ऑनलाइन बुकिंग सहायता।',time:'तुरंत',charge:'₹20 प्रति टिकट सेवा शुल्क',docs:['यात्री का नाम व उम्र','मोबाइल नंबर']},
+ {id:'flight-ticket',cat:'Travel',catHi:'यात्रा सेवाएं',icon:'✈️',name:'Flight Ticket',nameHi:'हवाई टिकट बुकिंग',desc:'घरेलू व अंतरराष्ट्रीय हवाई टिकट बुकिंग में सहायता।',time:'तुरंत',charge:'₹150 प्रति टिकट सेवा शुल्क',docs:['यात्री का नाम','आईडी प्रमाण','पासपोर्ट (अंतरराष्ट्रीय हेतु)']},
+ {id:'passport-services',cat:'Travel',catHi:'यात्रा सेवाएं',icon:'🛂',name:'Passport Services',nameHi:'पासपोर्ट सेवा',desc:'नया पासपोर्ट, नवीनीकरण व अपॉइंटमेंट बुकिंग में सहायता।',time:'10-15 कार्य दिवस',charge:'₹200 सेवा शुल्क',docs:['आधार कार्ड','जन्म तिथि प्रमाण','निवास प्रमाण','पासपोर्ट फोटो']},
+ {id:'digilocker',cat:'Digital Services',catHi:'डिजिटल सेवाएं',icon:'🔐',name:'DigiLocker',nameHi:'डिजिलॉकर सेवा',desc:'डिजिलॉकर खाता खोलना व दस्तावेज़ लिंक करने में सहायता।',time:'1 कार्य दिवस',charge:'₹40 सेवा शुल्क',docs:['आधार कार्ड','मोबाइल नंबर']},
+ {id:'ayushman-bharat',cat:'Digital Services',catHi:'डिजिटल सेवाएं',icon:'🩹',name:'Ayushman Bharat Card',nameHi:'आयुष्मान भारत कार्ड',desc:'आयुष्मान भारत स्वास्थ्य कार्ड बनवाने में ऑनलाइन सहायता।',time:'3-5 कार्य दिवस',charge:'₹50 सेवा शुल्क',docs:['आधार कार्ड','राशन कार्ड','मोबाइल नंबर','पासपोर्ट फोटो']},
+ {id:'e-shram',cat:'Digital Services',catHi:'डिजिटल सेवाएं',icon:'🛠️',name:'e-Shram Card',nameHi:'ई-श्रम कार्ड',desc:'असंगठित क्षेत्र श्रमिकों हेतु ई-श्रम कार्ड पंजीकरण सहायता।',time:'1 कार्य दिवस',charge:'₹40 सेवा शुल्क',docs:['आधार कार्ड','मोबाइल नंबर','बैंक पासबुक']},
+];
+
+const CATS = ['सभी', ...Array.from(new Set(SERVICES.map(s=>s.catHi)))];
+
+/* ================= UTIL ================= */
+const $ = (sel,ctx=document)=>ctx.querySelector(sel);
+const $$ = (sel,ctx=document)=>Array.from(ctx.querySelectorAll(sel));
+const app = $('#app');
+
+function toast(msg, type=''){
+  const t = document.createElement('div');
+  t.className = 'toast'+(type?' '+type:'');
+  t.textContent = msg;
+  $('#toastContainer').appendChild(t);
+  setTimeout(()=>{ t.style.opacity='0'; t.style.transition='opacity .3s'; setTimeout(()=>t.remove(),300); }, 3000);
+}
+
+function genAppId(){
+  const d = new Date();
+  const ymd = ''+d.getFullYear()+String(d.getMonth()+1).padStart(2,'0')+String(d.getDate()).padStart(2,'0');
+  const rand = Math.random().toString(36).slice(2,7).toUpperCase();
+  return 'COP-'+ymd+'-'+rand;
+}
+
+function fileToDataURL(file){
+  return new Promise((resolve,reject)=>{
+    const r = new FileReader();
+    r.onload = ()=>resolve(r.result);
+    r.onerror = reject;
+    r.readAsDataURL(file);
+  });
+}
+
+function fmtDate(iso){
+  try{ const d = new Date(iso); return d.toLocaleDateString('hi-IN',{day:'2-digit',month:'short',year:'numeric'})+' '+d.toLocaleTimeString('hi-IN',{hour:'2-digit',minute:'2-digit'}); }catch(e){ return iso; }
+}
+
+/* ================= STORAGE ================= */
+const Store = {
+  async getTheme(){
+    try{ const r = await window.storage.get('theme', false); return r ? r.value : 'light'; }catch(e){ return 'light'; }
+  },
+  async setTheme(v){ try{ await window.storage.set('theme', v, false); }catch(e){} },
+  async saveApplication(rec){ try{ return await window.storage.set('application:'+rec.id, JSON.stringify(rec), true); }catch(e){ console.error(e); return null; } },
+  async getApplication(id){ try{ const r = await window.storage.get('application:'+id, true); return r? JSON.parse(r.value): null; }catch(e){ return null; } },
+  async listApplications(){
+    try{
+      const l = await window.storage.list('application:', true);
+      if(!l || !l.keys) return [];
+      const recs = await Promise.all(l.keys.map(async k=>{
+        try{ const r = await window.storage.get(k, true); return r? JSON.parse(r.value): null; }catch(e){ return null; }
+      }));
+      return recs.filter(Boolean).sort((a,b)=> new Date(b.createdAt)-new Date(a.createdAt));
+    }catch(e){ return []; }
+  },
+  async deleteApplication(id){ try{ return await window.storage.delete('application:'+id, true); }catch(e){ return null; } }
+};
+
+/* ================= ROUTER ================= */
+function currentRoute(){
+  const h = location.hash.replace(/^#\//,'') || 'home';
+  const parts = h.split('/');
+  return { name: parts[0]||'home', param: parts[1]||null };
+}
+
+function setActiveNav(){
+  const r = currentRoute();
+  $$('#navlinksDesktop a, #navlinksMobile a').forEach(a=>{
+    const match = a.getAttribute('href') === '#/'+r.name;
+    a.classList.toggle('active', match);
+  });
+}
+
+function buildNav(){
+  const build = (container)=>{
+    container.innerHTML = NAV.map(n=>`<a href="${n.href}">${n.label}</a>`).join('');
+  };
+  build($('#navlinksDesktop'));
+  build($('#navlinksMobile'));
+  $('#footerPopular').innerHTML = SERVICES.slice(0,6).map(s=>`<a href="#/service/${s.id}">${s.nameHi}</a>`).join('');
+}
+
+window.addEventListener('hashchange', render);
+window.addEventListener('DOMContentLoaded', init);
+
+async function init(){
+  buildNav();
+  const theme = await Store.getTheme();
+  document.body.setAttribute('data-theme', theme);
+  $('#themeBtn').textContent = theme==='dark' ? '☀️' : '🌙';
+  render();
+  bindGlobal();
+}
+
+function bindGlobal(){
+  $('#themeBtn').addEventListener('click', async ()=>{
+    const cur = document.body.getAttribute('data-theme');
+    const next = cur==='dark' ? 'light':'dark';
+    document.body.setAttribute('data-theme', next);
+    $('#themeBtn').textContent = next==='dark'?'☀️':'🌙';
+    await Store.setTheme(next);
+  });
+  $('#hamburgerBtn').addEventListener('click', ()=> $('#mobileMenu').classList.add('open'));
+  $('#closeMobileMenu').addEventListener('click', ()=> $('#mobileMenu').classList.remove('open'));
+  $('#mobileMenu').addEventListener('click', (e)=>{ if(e.target.id==='mobileMenu') $('#mobileMenu').classList.remove('open'); });
+  $$('#navlinksMobile').forEach(()=>{});
+  $('#navlinksMobile').addEventListener('click', (e)=>{ if(e.target.tagName==='A') $('#mobileMenu').classList.remove('open'); });
+
+  $('#searchBtn').addEventListener('click', ()=>{ $('#searchOverlay').classList.add('open'); $('#searchInput').value=''; $('#searchInput').focus(); renderSearchResults(''); });
+  $('#searchOverlay').addEventListener('click', (e)=>{ if(e.target.id==='searchOverlay') $('#searchOverlay').classList.remove('open'); });
+  $('#searchInput').addEventListener('input', (e)=> renderSearchResults(e.target.value));
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ $('#searchOverlay').classList.remove('open'); closeModal(); } });
+
+  $('#modalBg').addEventListener('click', (e)=>{ if(e.target.id==='modalBg') closeModal(); });
+}
+
+function renderSearchResults(q){
+  q = q.trim().toLowerCase();
+  const results = q ? SERVICES.filter(s=> s.name.toLowerCase().includes(q) || s.nameHi.includes(q) || s.cat.toLowerCase().includes(q)) : SERVICES.slice(0,8);
+  const box = $('#searchResults');
+  if(results.length===0){ box.innerHTML = '<div class="search-empty">कोई सेवा नहीं मिली। कृपया अलग शब्द से खोजें।</div>'; return; }
+  box.innerHTML = results.map(s=>`
+    <a class="sr-item" href="#/service/${s.id}">
+      <div class="ic" style="width:38px;height:38px;border-radius:10px;background:var(--primary-light);display:flex;align-items:center;justify-content:center;font-size:18px;">${s.icon}</div>
+      <div><div style="font-weight:600;font-size:13.5px;">${s.nameHi}</div><div style="font-size:11.5px;color:var(--text-muted);">${s.catHi}</div></div>
+    </a>`).join('');
+  $$('.sr-item', box).forEach(a=> a.addEventListener('click', ()=> $('#searchOverlay').classList.remove('open')));
+}
+
+function closeModal(){ $('#modalBg').classList.remove('open'); $('#modalContent').innerHTML=''; }
+function openModal(html){ $('#modalContent').innerHTML = html; $('#modalBg').classList.add('open'); }
+
+async function render(){
+  const r = currentRoute();
+  window.scrollTo({top:0, behavior:'instant' in window ? 'instant':'auto'});
+  setActiveNav();
+  if(r.name==='home') renderHome();
+  else if(r.name==='services') renderServices();
+  else if(r.name==='service') renderServiceDetail(r.param);
+  else if(r.name==='about') renderAbout();
+  else if(r.name==='faq') renderFAQ();
+  else if(r.name==='contact') renderContact();
+  else if(r.name==='dashboard') renderDashboard();
+  else if(r.name==='admin') renderAdmin();
+  else renderHome();
+}
+
+/* ================= PAGES ================= */
+function renderHome(){
+  app.innerHTML = `
+  <section class="hero">
+    <div class="wrap">
+      <div class="reveal">
+        <span class="eyebrow">🇮🇳 विश्वसनीय डिजिटल सेवा केंद्र · Patna, Bihar</span>
+        <h1>घर बैठे सभी <span class="accent">ऑनलाइन सरकारी</span> एवं डिजिटल सेवाओं की सुविधा</h1>
+        <p class="sub">दस्तावेज़ अपलोड करें और घर बैठे आवेदन करें — जाति, आय, आवासीय प्रमाण पत्र से लेकर परीक्षा फॉर्म, टिकट बुकिंग और आधार-पैन सेवाओं तक, सब कुछ एक ही जगह पर, तेज़ और भरोसेमंद तरीके से।</p>
+        <div class="cta-row">
+          <a href="#/services" class="btn btn-primary">📝 Apply Now</a>
+          <a href="https://wa.me/916287059861" target="_blank" rel="noopener" class="btn btn-secondary">💬 WhatsApp Support</a>
+        </div>
+        <div class="trustrow">
+          <div class="trust-item"><span class="dot"></span> 5000+ आवेदन सफलतापूर्वक पूर्ण</div>
+          <div class="trust-item"><span class="dot"></span> सुरक्षित दस्तावेज़ अपलोड</div>
+          <div class="trust-item"><span class="dot"></span> तेज़ प्रोसेसिंग</div>
+        </div>
+      </div>
+      <div class="reveal" style="animation-delay:.1s;">
+        <div class="tracker-card">
+          <div class="tracker-head">
+            <div><div class="id">COP-20260710-8XQ2K</div><div class="svc">जाति प्रमाण पत्र</div></div>
+            <span class="status-badge status-Approved">Approved</span>
+          </div>
+          <div class="steps">
+            <div class="step"><div class="num">✓</div><div class="txt"><strong>आवेदन प्राप्त हुआ</strong><span>10 जुलाई, 11:04 AM</span></div></div>
+            <div class="step"><div class="num">✓</div><div class="txt"><strong>दस्तावेज़ सत्यापित</strong><span>10 जुलाई, 2:30 PM</span></div></div>
+            <div class="step"><div class="num">✓</div><div class="txt"><strong>प्रोसेसिंग पूर्ण</strong><span>11 जुलाई, 10:15 AM</span></div></div>
+            <div class="step pending"><div class="num">4</div><div class="txt"><strong>डिलीवरी</strong><span>प्रतीक्षारत</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">प्रक्रिया</span>
+        <h2>सिर्फ 4 आसान चरणों में आवेदन करें</h2>
+        <p>कहीं जाने की ज़रूरत नहीं — अपने मोबाइल या कंप्यूटर से पूरी प्रक्रिया घर बैठे पूरी करें।</p>
+      </div>
+      <div class="steps-grid">
+        <div class="hiw-card"><div class="no">01</div><h4>सेवा चुनें</h4><p>अपनी ज़रूरत के अनुसार सेवाओं की सूची से सही सेवा चुनें।</p></div>
+        <div class="hiw-card"><div class="no">02</div><h4>फॉर्म भरें</h4><p>अपनी जानकारी सही-सही भरें और दस्तावेज़ अपलोड करें।</p></div>
+        <div class="hiw-card"><div class="no">03</div><h4>शुल्क जमा करें</h4><p>न्यूनतम सेवा शुल्क का भुगतान कर आवेदन सबमिट करें।</p></div>
+        <div class="hiw-card"><div class="no">04</div><h4>स्टेटस ट्रैक करें</h4><p>Application ID से अपने आवेदन की स्थिति कभी भी देखें।</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">हमारी सेवाएं</span>
+        <h2>लोकप्रिय सेवाएं</h2>
+        <p>प्रमाण पत्र, पहचान दस्तावेज़, शिक्षा, सरकारी परीक्षा, यात्रा व डिजिटल सेवाएं — सब एक ही स्थान पर।</p>
+      </div>
+      <div class="services-grid" id="homeServicesGrid"></div>
+      <div style="text-align:center;margin-top:34px;">
+        <a href="#/services" class="btn btn-outline">सभी 26 सेवाएं देखें →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">ग्राहक अनुभव</span>
+        <h2>हमारे उपयोगकर्ता क्या कहते हैं</h2>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card"><div class="stars">★★★★★</div><p>"जाति और आय प्रमाण पत्र दोनों बिना किसी परेशानी के घर बैठे बन गया। स्टेटस भी ऐप में ही दिख गया।"</p><div class="who"><div class="av">R</div><div><b>राजेश कुमार</b><span>Patna</span></div></div></div>
+        <div class="testi-card"><div class="stars">★★★★★</div><p>"स्कॉलरशिप फॉर्म भरने में काफी मदद मिली, टीम ने पूरा प्रोसेस समझाया।"</p><div class="who"><div class="av">S</div><div><b>सुनीता देवी</b><span>Patna</span></div></div></div>
+        <div class="testi-card"><div class="stars">★★★★★</div><p>"रेलवे फॉर्म और एग्जाम फॉर्म दोनों समय पर भर दिए गए। बहुत भरोसेमंद सेवा।"</p><div class="who"><div class="av">A</div><div><b>अमित सिंह</b><span>Patna</span></div></div></div>
+      </div>
+    </div>
+  </section>
+  `;
+  $('#homeServicesGrid').innerHTML = SERVICES.slice(0,8).map(svcCardHTML).join('');
+}
+
+function svcCardHTML(s){
+  return `<a class="svc-card reveal" href="#/service/${s.id}">
+    <span class="go">→</span>
+    <div class="ic">${s.icon}</div>
+    <div class="cat">${s.catHi}</div>
+    <h4>${s.nameHi}</h4>
+    <div class="meta"><span>⏱ ${s.time}</span><span>${s.charge.split(' ')[0]}</span></div>
+  </a>`;
+}
+
+function renderServices(){
+  app.innerHTML = `
+    <div class="page-title">
+      <span class="eyebrow">26 सेवाएं</span>
+      <h1>सभी ऑनलाइन सेवाएं</h1>
+      <p>नीचे दी गई सूची से अपनी ज़रूरत की सेवा खोजें या श्रेणी के अनुसार फ़िल्टर करें।</p>
+    </div>
+    <div class="section" style="padding-top:20px;">
+      <div class="wrap">
+        <div style="max-width:480px;margin:0 auto 26px;">
+          <input id="svcSearch" placeholder="🔍 सेवा का नाम खोजें..." style="width:100%;padding:13px 18px;border-radius:99px;border:1.5px solid var(--border);background:var(--surface);color:var(--text);font-size:14px;outline:none;">
+        </div>
+        <div class="filters" id="catFilters"></div>
+        <div class="services-grid" id="allServicesGrid"></div>
+      </div>
+    </div>
+  `;
+  $('#catFilters').innerHTML = CATS.map((c,i)=>`<button class="chip ${i===0?'active':''}" data-cat="${c}">${c}</button>`).join('');
+  const grid = $('#allServicesGrid');
+  let activeCat = 'सभी';
+  function draw(){
+    const q = $('#svcSearch').value.trim().toLowerCase();
+    let list = SERVICES;
+    if(activeCat!=='सभी') list = list.filter(s=>s.catHi===activeCat);
+    if(q) list = list.filter(s=> s.name.toLowerCase().includes(q) || s.nameHi.includes(q));
+    grid.innerHTML = list.length ? list.map(svcCardHTML).join('') : `<div class="no-results">😕 कोई सेवा नहीं मिली — कृपया अलग शब्द या श्रेणी चुनें।</div>`;
+  }
+  $('#svcSearch').addEventListener('input', draw);
+  $$('.chip', $('#catFilters')).forEach(chip=>{
+    chip.addEventListener('click', ()=>{
+      $$('.chip', $('#catFilters')).forEach(c=>c.classList.remove('active'));
+      chip.classList.add('active'); activeCat = chip.dataset.cat; draw();
+    });
+  });
+  draw();
+}
+
+function renderServiceDetail(id){
+  const s = SERVICES.find(x=>x.id===id);
+  if(!s){ app.innerHTML = `<div class="page-title"><h1>सेवा नहीं मिली</h1><p><a href="#/services" class="btn btn-primary" style="margin-top:16px;">सभी सेवाएं देखें</a></p></div>`; return; }
+  app.innerHTML = `
+  <div class="section" style="padding-bottom:0;">
+    <div class="wrap">
+      <div class="breadcrumbs"><a href="#/home">होम</a> <span>/</span> <a href="#/services">सेवाएं</a> <span>/</span> <span>${s.nameHi}</span></div>
+      <div class="svc-hero reveal">
+        <div class="ic-lg">${s.icon}</div>
+        <div><h1>${s.nameHi} <span style="color:var(--text-muted);font-weight:500;font-size:16px;">(${s.name})</span></h1><p>${s.desc}</p></div>
+      </div>
+      <div class="meta-cards">
+        <div class="meta-card"><div class="lbl">प्रोसेसिंग समय</div><div class="val">⏱ ${s.time}</div></div>
+        <div class="meta-card charge"><div class="lbl">सेवा शुल्क</div><div class="val">💰 ${s.charge}</div></div>
+        <div class="meta-card"><div class="lbl">श्रेणी</div><div class="val">🗂 ${s.catHi}</div></div>
+      </div>
+      <h3 style="font-size:16.5px;margin-bottom:14px;">आवश्यक दस्तावेज़</h3>
+      <ul class="doclist">${s.docs.map(d=>`<li><span class="chk">✓</span>${d}</li>`).join('')}</ul>
+    </div>
+  </div>
+  <div class="section" style="padding-top:0;">
+    <div class="wrap" style="max-width:820px;">
+      <div id="formArea"></div>
+    </div>
+  </div>
+  `;
+  renderApplicationForm(s);
+}
+
+function renderApplicationForm(s){
+  const area = $('#formArea');
+  area.innerHTML = `
+    <div class="form-card reveal">
+      <h3>ऑनलाइन आवेदन फॉर्म</h3>
+      <div class="sub">कृपया सभी जानकारी सही-सही भरें। <span style="color:var(--danger);">*</span> चिह्नित फ़ील्ड आवश्यक हैं।</div>
+      <form id="appForm" novalidate>
+        <div class="section-title">👤 व्यक्तिगत जानकारी</div>
+        <div class="grid2">
+          <div class="field"><label>पूरा नाम <span class="req">*</span></label><input name="fullName" required placeholder="जैसे: राम कुमार"><div class="errmsg">कृपया पूरा नाम दर्ज करें</div></div>
+          <div class="field"><label>पिता/पति का नाम <span class="req">*</span></label><input name="parentName" required placeholder="जैसे: श्याम कुमार"><div class="errmsg">यह फ़ील्ड आवश्यक है</div></div>
+        </div>
+        <div class="grid2">
+          <div class="field"><label>जन्म तिथि <span class="req">*</span></label><input type="date" name="dob" required><div class="errmsg">जन्म तिथि चुनें</div></div>
+          <div class="field"><label>लिंग <span class="req">*</span></label>
+            <select name="gender" required><option value="">चुनें</option><option>पुरुष</option><option>महिला</option><option>अन्य</option></select>
+            <div class="errmsg">लिंग चुनें</div>
+          </div>
+        </div>
+        <div class="grid2">
+          <div class="field"><label>मोबाइल नंबर <span class="req">*</span></label><input name="mobile" required maxlength="10" placeholder="10 अंकों का मोबाइल नंबर"><div class="hint">OTP सत्यापन हेतु उपयोग होगा</div><div class="errmsg">मान्य 10 अंकों का मोबाइल नंबर दर्ज करें (6-9 से शुरू)</div></div>
+          <div class="field"><label>ईमेल</label><input type="email" name="email" placeholder="you@example.com"><div class="errmsg">मान्य ईमेल दर्ज करें</div></div>
+        </div>
+        <div class="grid2">
+          <div class="field"><label>आधार नंबर <span class="req">*</span></label><input name="aadhaar" required maxlength="12" placeholder="12 अंकों का आधार नंबर"><div class="errmsg">मान्य 12 अंकों का आधार नंबर दर्ज करें</div></div>
+          <div class="field"><label>राज्य <span class="req">*</span></label>
+            <select name="state" required><option value="">चुनें</option><option selected>Bihar</option><option>Uttar Pradesh</option><option>Jharkhand</option><option>West Bengal</option><option>Delhi</option><option>अन्य</option></select>
+            <div class="errmsg">राज्य चुनें</div>
+          </div>
+        </div>
+        <div class="grid2">
+          <div class="field"><label>जिला <span class="req">*</span></label><input name="district" required placeholder="जैसे: Patna"><div class="errmsg">जिला दर्ज करें</div></div>
+          <div class="field"><label>पूरा पता <span class="req">*</span></label><input name="address" required placeholder="मकान नं., गली, गाँव/शहर"><div class="errmsg">पता दर्ज करें</div></div>
+        </div>
+
+        <div class="section-title">📎 दस्तावेज़ अपलोड</div>
+        <div class="upload-grid">
+          <div class="dropzone" data-slot="aadhaarFile">
+            <div class="dz-ic">🪪</div><div class="dz-label">आधार कार्ड</div><div class="dz-hint">JPG/PNG/PDF, drag & drop</div>
+            <input type="file" accept=".jpg,.jpeg,.png,.pdf" data-slot="aadhaarFile">
+          </div>
+          <div class="dropzone" data-slot="photoFile">
+            <div class="dz-ic">🧑</div><div class="dz-label">पासपोर्ट फोटो</div><div class="dz-hint">JPG/PNG, drag & drop</div>
+            <input type="file" accept=".jpg,.jpeg,.png" data-slot="photoFile">
+          </div>
+          <div class="dropzone" data-slot="signatureFile">
+            <div class="dz-ic">✍️</div><div class="dz-label">हस्ताक्षर</div><div class="dz-hint">JPG/PNG, drag & drop</div>
+            <input type="file" accept=".jpg,.jpeg,.png" data-slot="signatureFile">
+          </div>
+        </div>
+        <div class="field" style="margin-top:16px;">
+          <label>अन्य आवश्यक दस्तावेज़ (एक से अधिक चुन सकते हैं)</label>
+          <div class="dropzone" style="min-height:90px;" data-slot="docsMulti">
+            <div class="dz-ic">📄</div><div class="dz-label">दस्तावेज़ जोड़ें</div><div class="dz-hint">PDF/JPG/PNG</div>
+            <input type="file" accept=".jpg,.jpeg,.png,.pdf" multiple data-slot="docsMulti">
+          </div>
+          <div class="docs-multi" id="docsMultiList"></div>
+        </div>
+
+        <div class="consent">
+          <input type="checkbox" id="consentBox" required>
+          <label for="consentBox">मैं पुष्टि करता/करती हूँ कि उपरोक्त जानकारी सही है और मैं Click Online Point को इस आवेदन को संसाधित करने हेतु दस्तावेज़ उपयोग करने की सहमति देता/देती हूँ। <span class="req">*</span></label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block" id="submitBtn">✅ Submit Application</button>
+      </form>
+      <div id="successArea"></div>
+    </div>
+  `;
+
+  const form = $('#appForm', area);
+  const fileStore = { aadhaarFile:null, photoFile:null, signatureFile:null, docsMulti:[] };
+
+  // single-file dropzones
+  ['aadhaarFile','photoFile','signatureFile'].forEach(slot=>{
+    const dz = area.querySelector(`.dropzone[data-slot="${slot}"]`);
+    const input = dz.querySelector('input[type=file]');
+    dz.addEventListener('dragover', e=>{ e.preventDefault(); dz.classList.add('drag'); });
+    dz.addEventListener('dragleave', ()=> dz.classList.remove('drag'));
+    dz.addEventListener('drop', e=>{ e.preventDefault(); dz.classList.remove('drag'); if(e.dataTransfer.files[0]){ input.files = e.dataTransfer.files; handleSingleFile(slot, e.dataTransfer.files[0], dz); } });
+    input.addEventListener('change', e=>{ if(e.target.files[0]) handleSingleFile(slot, e.target.files[0], dz); });
+  });
+
+  async function handleSingleFile(slot, file, dz){
+    if(file.size > 4*1024*1024){ toast('फ़ाइल का आकार 4MB से कम होना चाहिए', 'err'); return; }
+    const url = await fileToDataURL(file);
+    fileStore[slot] = { name:file.name, size:file.size, type:file.type, dataUrl:url };
+    const isImg = file.type.startsWith('image/');
+    dz.querySelectorAll('.preview,.rm').forEach(e=>e.remove());
+    dz.insertAdjacentHTML('beforeend', `
+      <div class="preview">${isImg?`<img src="${url}">`:`<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:34px;">📄</div>`}<div class="filebadge">${file.name}</div></div>
+      <button type="button" class="rm">✕</button>
+    `);
+    dz.querySelector('.rm').addEventListener('click', (e)=>{ e.stopPropagation(); e.preventDefault(); fileStore[slot]=null; dz.querySelectorAll('.preview,.rm').forEach(el=>el.remove()); dz.querySelector('input').value=''; });
+  }
+
+  // multi dropzone
+  const multiDz = area.querySelector('.dropzone[data-slot="docsMulti"]');
+  const multiInput = multiDz.querySelector('input[type=file]');
+  const multiList = $('#docsMultiList', area);
+  multiDz.addEventListener('dragover', e=>{ e.preventDefault(); multiDz.classList.add('drag'); });
+  multiDz.addEventListener('dragleave', ()=> multiDz.classList.remove('drag'));
+  multiDz.addEventListener('drop', e=>{ e.preventDefault(); multiDz.classList.remove('drag'); handleMultiFiles(e.dataTransfer.files); });
+  multiInput.addEventListener('change', e=> handleMultiFiles(e.target.files));
+
+  async function handleMultiFiles(files){
+    for(const file of Array.from(files)){
+      if(file.size > 4*1024*1024){ toast(`"${file.name}" 4MB से बड़ी है, छोड़ी गई`, 'err'); continue; }
+      const url = await fileToDataURL(file);
+      fileStore.docsMulti.push({ name:file.name, size:file.size, type:file.type, dataUrl:url });
+    }
+    drawMultiList();
+  }
+  function drawMultiList(){
+    multiList.innerHTML = fileStore.docsMulti.map((f,i)=>`<div class="doc-chip">📄 ${f.name} <button type="button" data-i="${i}">✕</button></div>`).join('');
+    $$('button[data-i]', multiList).forEach(b=> b.addEventListener('click', ()=>{ fileStore.docsMulti.splice(+b.dataset.i,1); drawMultiList(); }));
+  }
+
+  function showErr(field, show){
+    field.classList.toggle('err', show);
+    const em = field.parentElement.querySelector('.errmsg');
+    if(em) em.classList.toggle('show', show);
+  }
+
+  function validate(){
+    let ok = true;
+    const req = form.querySelectorAll('[required]');
+    req.forEach(f=>{
+      if(f.type==='checkbox'){ if(!f.checked){ ok=false; } return; }
+      if(!f.value || !f.value.trim()){ showErr(f,true); ok=false; } else showErr(f,false);
+    });
+    const mobile = form.mobile;
+    if(mobile.value && !/^[6-9]\d{9}$/.test(mobile.value.trim())){ showErr(mobile,true); ok=false; }
+    const aadhaar = form.aadhaar;
+    if(aadhaar.value && !/^\d{12}$/.test(aadhaar.value.trim())){ showErr(aadhaar,true); ok=false; }
+    const email = form.email;
+    if(email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())){ showErr(email,true); ok=false; }
+    if(!$('#consentBox', area).checked){ toast('कृपया सहमति बॉक्स चुनें', 'err'); ok=false; }
+    return ok;
+  }
+
+  form.addEventListener('submit', async (e)=>{
+    e.preventDefault();
+    if(!validate()){ toast('कृपया लाल चिह्नित फ़ील्ड जांचें', 'err'); return; }
+    const btn = $('#submitBtn', form);
+    btn.disabled = true; btn.textContent = '⏳ सबमिट हो रहा है...';
+    const fd = new FormData(form);
+    const appId = genAppId();
+    const record = {
+      id: appId,
+      serviceId: s.id,
+      serviceName: s.nameHi,
+      fullName: fd.get('fullName'), parentName: fd.get('parentName'), dob: fd.get('dob'),
+      gender: fd.get('gender'), mobile: fd.get('mobile'), email: fd.get('email'),
+      aadhaar: fd.get('aadhaar'), state: fd.get('state'), district: fd.get('district'), address: fd.get('address'),
+      files: { aadhaar: fileStore.aadhaarFile, photo: fileStore.photoFile, signature: fileStore.signatureFile, documents: fileStore.docsMulti },
+      status: 'Pending',
+      createdAt: new Date().toISOString(),
+    };
+    const res = await Store.saveApplication(record);
+    btn.disabled=false; btn.textContent='✅ Submit Application';
+    if(res===null){ toast('सबमिट करने में त्रुटि हुई, कृपया पुनः प्रयास करें', 'err'); return; }
+    form.style.display='none';
+    $('#successArea').innerHTML = `
+      <div class="success-card reveal">
+        <div class="success-icon">✓</div>
+        <h3 style="margin:0 0 6px;font-size:20px;">आवेदन सफलतापूर्वक सबमिट हुआ!</h3>
+        <p style="color:var(--text-muted);margin:0;">आपका आवेदन "${s.nameHi}" हेतु सफलतापूर्वक प्राप्त हो गया है।</p>
+        <div class="appid-box">${appId} <button id="copyId">Copy</button></div>
+        <p style="color:var(--text-muted);font-size:13px;">अपनी Application ID सुरक्षित रखें — इससे आप कभी भी अपने आवेदन की स्थिति देख सकते हैं।</p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:18px;">
+          <a href="#/dashboard" class="btn btn-primary">📊 आवेदन की स्थिति देखें</a>
+          <a href="#/services" class="btn btn-outline">➕ अन्य सेवा हेतु आवेदन करें</a>
+        </div>
+      </div>
+    `;
+    $('#copyId').addEventListener('click', ()=>{ navigator.clipboard.writeText(appId).then(()=>toast('Application ID कॉपी हो गया','ok')); });
+    toast('आवेदन सफलतापूर्वक सबमिट हुआ','ok');
+  });
+}
+
+function renderAbout(){
+  app.innerHTML = `
+    <div class="page-title">
+      <span class="eyebrow">हमारे बारे में</span>
+      <h1>Click Online Point — Patna, Bihar</h1>
+      <p>आपका भरोसेमंद डिजिटल सेवा केंद्र, जो हर नागरिक तक सरकारी व डिजिटल सेवाएं आसान और तेज़ बनाता है।</p>
+    </div>
+    <section class="section">
+      <div class="wrap about-grid">
+        <div>
+          <h2 style="font-size:24px;font-weight:800;margin-top:0;">हमारा उद्देश्य</h2>
+          <p style="color:var(--text-muted);line-height:1.8;font-size:14.5px;">Click Online Point, Patna, Bihar में स्थित एक निजी डिजिटल सेवा केंद्र (Common Service Point) है। हमारा उद्देश्य है कि किसी भी नागरिक को प्रमाण पत्र, पहचान दस्तावेज़, परीक्षा फॉर्म या टिकट बुकिंग के लिए दफ्तरों के चक्कर न लगाने पड़ें — यह सब सुविधा अब घर बैठे ऑनलाइन उपलब्ध है।</p>
+          <p style="color:var(--text-muted);line-height:1.8;font-size:14.5px;">हमारी टीम हर आवेदन को ध्यानपूर्वक जांचती है और सही दस्तावेज़ों के साथ समय पर सबमिट करने में मदद करती है, ताकि आपकी सेवा बिना किसी देरी के पूर्ण हो।</p>
+          <div class="stat-grid">
+            <div class="stat-card"><div class="num">5000+</div><div class="lbl">पूर्ण आवेदन</div></div>
+            <div class="stat-card"><div class="num">26+</div><div class="lbl">सेवाएं</div></div>
+            <div class="stat-card"><div class="num">4.9★</div><div class="lbl">ग्राहक रेटिंग</div></div>
+          </div>
+          <div class="disclaimer-box">⚠️ <strong>सूचना:</strong> Click Online Point एक निजी डिजिटल सेवा केंद्र है जो नागरिकों को ऑनलाइन आवेदन भरने में सुविधा शुल्क लेकर सहायता प्रदान करता है। यह किसी भी सरकारी विभाग का आधिकारिक पोर्टल नहीं है और भारत सरकार या बिहार सरकार से संबद्ध नहीं है।</div>
+        </div>
+        <div class="value-grid" style="grid-template-columns:1fr;gap:16px;">
+          <div class="value-card"><div class="vi">⚡</div><h4>तेज़ प्रोसेसिंग</h4><p>अधिकतर आवेदन 24-72 घंटों में प्रोसेस किए जाते हैं।</p></div>
+          <div class="value-card"><div class="vi">🔒</div><h4>सुरक्षित दस्तावेज़</h4><p>आपके अपलोड किए गए दस्तावेज़ पूरी सुरक्षा के साथ संभाले जाते हैं।</p></div>
+          <div class="value-card"><div class="vi">🤝</div><h4>व्यक्तिगत सहायता</h4><p>हर कदम पर फोन व WhatsApp के ज़रिए सहायता उपलब्ध।</p></div>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+const FAQS = [
+  {q:'मैं अपने आवेदन की स्थिति कैसे देख सकता/सकती हूँ?', a:'आप "मेरा आवेदन" पेज पर जाकर अपना मोबाइल नंबर दर्ज करें, आपके सभी आवेदन व उनकी वर्तमान स्थिति दिखाई देगी।'},
+  {q:'सेवा शुल्क का भुगतान कैसे करें?', a:'फिलहाल आवेदन सबमिट करते समय शुल्क की जानकारी दिखाई जाती है; भुगतान केंद्र पर नकद या ऑनलाइन माध्यम से किया जा सकता है। हमारी टीम आपसे संपर्क कर पुष्टि करेगी।'},
+  {q:'दस्तावेज़ अपलोड करने में क्या फॉर्मेट स्वीकार किए जाते हैं?', a:'आप JPG, PNG व PDF फॉर्मेट में दस्तावेज़ अपलोड कर सकते हैं। प्रत्येक फ़ाइल का आकार 4MB से कम होना चाहिए।'},
+  {q:'क्या यह एक सरकारी वेबसाइट है?', a:'नहीं, Click Online Point एक निजी डिजिटल सेवा केंद्र है जो नागरिकों को ऑनलाइन सरकारी व डिजिटल सेवाओं हेतु आवेदन करने में सहायता व सुविधा शुल्क पर सेवाएं प्रदान करता है।'},
+  {q:'आवेदन में कितना समय लगता है?', a:'सेवा के अनुसार प्रोसेसिंग समय अलग-अलग होता है — हर सेवा पेज पर अनुमानित समय दर्शाया गया है, आमतौर पर 1 से 20 कार्य दिवस के बीच।'},
+  {q:'क्या मैं गलत जानकारी भरने पर सुधार कर सकता/सकती हूँ?', a:'हाँ, कृपया हमें WhatsApp या कॉल के माध्यम से अपनी Application ID के साथ संपर्क करें, हमारी टीम आवश्यक सुधार में सहायता करेगी।'},
+];
+
+function renderFAQ(){
+  app.innerHTML = `
+    <div class="page-title">
+      <span class="eyebrow">सहायता केंद्र</span>
+      <h1>अक्सर पूछे जाने वाले प्रश्न</h1>
+      <p>यदि आपका प्रश्न यहाँ सूचीबद्ध नहीं है, तो कृपया हमें WhatsApp या कॉल के माध्यम से संपर्क करें।</p>
+    </div>
+    <section class="section" style="padding-top:20px;">
+      <div class="wrap" style="max-width:760px;">
+        <div id="faqList"></div>
+      </div>
+    </section>
+  `;
+  $('#faqList').innerHTML = FAQS.map((f,i)=>`
+    <div class="faq-item" data-i="${i}">
+      <div class="faq-q">${f.q}<span class="plus">+</span></div>
+      <div class="faq-a"><p>${f.a}</p></div>
+    </div>`).join('');
+  $$('.faq-item').forEach(item=>{
+    item.querySelector('.faq-q').addEventListener('click', ()=>{
+      const wasOpen = item.classList.contains('open');
+      $$('.faq-item').forEach(i=>i.classList.remove('open'));
+      if(!wasOpen) item.classList.add('open');
+    });
+  });
+}
+
+function renderContact(){
+  app.innerHTML = `
+    <div class="page-title">
+      <span class="eyebrow">संपर्क करें</span>
+      <h1>हमसे संपर्क करें</h1>
+      <p>किसी भी सेवा या आवेदन संबंधी सहायता हेतु नीचे दिए गए माध्यमों से संपर्क करें।</p>
+    </div>
+    <section class="section" style="padding-top:20px;">
+      <div class="wrap contact-grid">
+        <div class="contact-info-card reveal">
+          <div class="ci-row"><div class="ic">📍</div><div><h5>पता</h5><p>Click Online Point, Patna, Bihar, India</p></div></div>
+          <div class="ci-row"><div class="ic">📞</div><div><h5>मोबाइल / WhatsApp</h5><p>+91 62870 59861</p></div></div>
+          <div class="ci-row"><div class="ic">📷</div><div><h5>Instagram</h5><p>@Click_online_point</p></div></div>
+          <div class="ci-row"><div class="ic">🕒</div><div><h5>समय</h5><p>सोमवार–शनिवार, सुबह 9:00 – शाम 7:00</p></div></div>
+          <div class="map-embed"><iframe src="https://www.google.com/maps?q=Patna,Bihar&output=embed" loading="lazy"></iframe></div>
+        </div>
+        <div class="form-card reveal">
+          <h3>संदेश भेजें</h3>
+          <div class="sub">अपना प्रश्न लिखें, हमारी टीम जल्द ही आपसे संपर्क करेगी।</div>
+          <form id="contactForm">
+            <div class="grid2">
+              <div class="field"><label>नाम <span class="req">*</span></label><input required name="name" placeholder="आपका नाम"></div>
+              <div class="field"><label>मोबाइल नंबर <span class="req">*</span></label><input required name="mobile" maxlength="10" placeholder="10 अंकों का नंबर"></div>
+            </div>
+            <div class="field"><label>विषय</label><input name="subject" placeholder="जैसे: Scholarship संबंधी प्रश्न"></div>
+            <div class="field"><label>संदेश <span class="req">*</span></label><textarea required name="message" rows="4" placeholder="अपना संदेश लिखें..."></textarea></div>
+            <button class="btn btn-primary btn-block" type="submit">📨 संदेश भेजें</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  `;
+  $('#contactForm').addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const fd = new FormData(e.target);
+    const mob = fd.get('mobile');
+    if(!/^[6-9]\d{9}$/.test(mob||'')){ toast('कृपया मान्य मोबाइल नंबर दर्ज करें','err'); return; }
+    toast('आपका संदेश भेज दिया गया है, हम जल्द संपर्क करेंगे','ok');
+    e.target.reset();
+  });
+}
+
+function renderDashboard(){
+  app.innerHTML = `
+    <div class="page-title">
+      <span class="eyebrow">मेरा आवेदन</span>
+      <h1>आवेदन स्थिति ट्रैक करें</h1>
+      <p>अपना मोबाइल नंबर या Application ID दर्ज करें और अपने सभी आवेदनों की वर्तमान स्थिति देखें।</p>
+    </div>
+    <section class="section" style="padding-top:10px;">
+      <div class="wrap">
+        <div class="dash-search">
+          <input id="dashQuery" placeholder="मोबाइल नंबर या Application ID दर्ज करें">
+          <button class="btn btn-primary" id="dashSearchBtn">🔍 खोजें</button>
+        </div>
+        <div id="dashResults"></div>
+      </div>
+    </section>
+  `;
+  const resultsEl = $('#dashResults');
+  async function doSearch(){
+    const q = $('#dashQuery').value.trim().toLowerCase();
+    if(!q){ toast('कृपया मोबाइल नंबर या Application ID दर्ज करें','err'); return; }
+    resultsEl.innerHTML = `<div class="no-results">🔄 खोजा जा रहा है...</div>`;
+    const all = await Store.listApplications();
+    const matches = all.filter(a=> a.mobile===q || a.id.toLowerCase()===q || a.id.toLowerCase().includes(q));
+    if(matches.length===0){ resultsEl.innerHTML = `<div class="no-results">😕 कोई आवेदन नहीं मिला। कृपया सही मोबाइल नंबर या Application ID जांचें।</div>`; return; }
+    resultsEl.innerHTML = matches.map(a=>`
+      <div class="app-card reveal">
+        <div class="l"><h4>${a.serviceName}</h4><div class="idm">${a.id}</div><div style="font-size:12px;color:var(--text-muted);margin-top:4px;">आवेदन तिथि: ${fmtDate(a.createdAt)}</div></div>
+        <span class="status-badge status-${a.status}">${a.status}</span>
+      </div>
+    `).join('');
+  }
+  $('#dashSearchBtn').addEventListener('click', doSearch);
+  $('#dashQuery').addEventListener('keydown', e=>{ if(e.key==='Enter') doSearch(); });
+}
+
+/* ================= ADMIN ================= */
+const ADMIN_PASSWORD = 'ClickAdmin@2026';
+let isAdminAuthed = false;
+
+function renderAdmin(){
+  if(!isAdminAuthed){
+    app.innerHTML = `
+      <div class="admin-login reveal">
+        <div style="font-size:34px;margin-bottom:10px;">🔐</div>
+        <h3 style="margin:0 0 6px;">Admin Login</h3>
+        <p style="color:var(--text-muted);font-size:13px;margin-bottom:22px;">केवल अधिकृत व्यवस्थापक के लिए</p>
+        <div class="field" style="text-align:left;"><input type="password" id="adminPass" placeholder="Password दर्ज करें"></div>
+        <button class="btn btn-primary btn-block" id="adminLoginBtn">लॉगिन करें</button>
+        <p style="font-size:11.5px;color:var(--text-faint);margin-top:16px;">डेमो पासवर्ड: ClickAdmin@2026 (प्रोडक्शन हेतु सुरक्षित बैकएंड ऑथेंटिकेशन आवश्यक है)</p>
+      </div>
+    `;
+    $('#adminLoginBtn').addEventListener('click', ()=>{
+      if($('#adminPass').value === ADMIN_PASSWORD){ isAdminAuthed = true; renderAdmin(); toast('स्वागत है, Admin!','ok'); }
+      else toast('गलत पासवर्ड','err');
+    });
+    $('#adminPass').addEventListener('keydown', e=>{ if(e.key==='Enter') $('#adminLoginBtn').click(); });
+    return;
+  }
+  app.innerHTML = `
+    <div class="page-title" style="padding-bottom:0;">
+      <span class="eyebrow">Admin Panel</span>
+      <h1>सभी आवेदन प्रबंधित करें</h1>
+    </div>
+    <section class="section">
+      <div class="wrap">
+        <div class="admin-stats" id="adminStats"></div>
+        <div class="admin-toolbar">
+          <input id="adminSearch" placeholder="🔍 नाम, मोबाइल या ID खोजें" style="flex:1;min-width:200px;">
+          <select id="adminSvcFilter"><option value="">सभी सेवाएं</option></select>
+          <select id="adminStatusFilter">
+            <option value="">सभी स्थिति</option>
+            <option>Pending</option><option>Approved</option><option>Completed</option><option>Rejected</option>
+          </select>
+          <button class="btn btn-outline" id="adminLogoutBtn">🚪 Logout</button>
+        </div>
+        <div class="tbl-wrap"><div id="adminTableWrap" style="padding:30px;text-align:center;color:var(--text-muted);">लोड हो रहा है...</div></div>
+      </div>
+    </section>
+  `;
+  $('#adminSvcFilter').innerHTML += SERVICES.map(s=>`<option value="${s.id}">${s.nameHi}</option>`).join('');
+  $('#adminLogoutBtn').addEventListener('click', ()=>{ isAdminAuthed=false; renderAdmin(); });
+
+  let allApps = [];
+  async function load(){
+    allApps = await Store.listApplications();
+    drawStats();
+    draw();
+  }
+  function drawStats(){
+    const total = allApps.length;
+    const pending = allApps.filter(a=>a.status==='Pending').length;
+    const approved = allApps.filter(a=>a.status==='Approved').length;
+    const completed = allApps.filter(a=>a.status==='Completed').length;
+    $('#adminStats').innerHTML = `
+      <div class="astat"><b>${total}</b><span>कुल आवेदन</span></div>
+      <div class="astat"><b>${pending}</b><span>Pending</span></div>
+      <div class="astat"><b>${approved}</b><span>Approved</span></div>
+      <div class="astat"><b>${completed}</b><span>Completed</span></div>
+    `;
+  }
+  function draw(){
+    const q = $('#adminSearch').value.trim().toLowerCase();
+    const svcF = $('#adminSvcFilter').value;
+    const stF = $('#adminStatusFilter').value;
+    let list = allApps;
+    if(q) list = list.filter(a=> a.fullName.toLowerCase().includes(q) || a.mobile.includes(q) || a.id.toLowerCase().includes(q));
+    if(svcF) list = list.filter(a=> a.serviceId===svcF);
+    if(stF) list = list.filter(a=> a.status===stF);
+    const wrap = $('#adminTableWrap');
+    if(list.length===0){ wrap.innerHTML = `<div style="padding:40px;text-align:center;color:var(--text-muted);">कोई आवेदन नहीं मिला</div>`; return; }
+    wrap.innerHTML = `
+      <table class="admintbl">
+        <thead><tr><th>Application ID</th><th>नाम</th><th>सेवा</th><th>मोबाइल</th><th>तिथि</th><th>स्थिति</th><th>कार्य</th></tr></thead>
+        <tbody>
+        ${list.map(a=>`
+          <tr>
+            <td style="font-family:var(--mono);">${a.id}</td>
+            <td>${a.fullName}</td>
+            <td>${a.serviceName}</td>
+            <td>${a.mobile}</td>
+            <td>${fmtDate(a.createdAt)}</td>
+            <td><select data-id="${a.id}" class="statusSel">
+              ${['Pending','Approved','Completed','Rejected'].map(st=>`<option ${st===a.status?'selected':''}>${st}</option>`).join('')}
+            </select></td>
+            <td class="tbl-actions">
+              <button data-view="${a.id}" title="देखें">👁</button>
+              <button data-del="${a.id}" class="danger" title="हटाएं">🗑</button>
+            </td>
+          </tr>
+        `).join('')}
+        </tbody>
+      </table>
+    `;
+    $$('.statusSel', wrap).forEach(sel=>{
+      sel.addEventListener('change', async ()=>{
+        const rec = allApps.find(a=>a.id===sel.dataset.id);
+        rec.status = sel.value;
+        await Store.saveApplication(rec);
+        toast('स्थिति अपडेट की गई','ok');
+        drawStats();
+      });
+    });
+    $$('button[data-view]', wrap).forEach(b=> b.addEventListener('click', ()=> viewApp(b.dataset.view)));
+    $$('button[data-del]', wrap).forEach(b=> b.addEventListener('click', async ()=>{
+      if(confirm('क्या आप वाकई इस आवेदन को हटाना चाहते हैं?')){
+        await Store.deleteApplication(b.dataset.del);
+        toast('आवेदन हटाया गया','ok');
+        load();
+      }
+    }));
+  }
+  function viewApp(id){
+    const a = allApps.find(x=>x.id===id);
+    if(!a) return;
+    const docList = [a.files.aadhaar, a.files.photo, a.files.signature, ...(a.files.documents||[])].filter(Boolean);
+    openModal(`
+      <button class="closeX icon-btn" id="modalCloseBtn">✕</button>
+      <h3>${a.serviceName}</h3>
+      <div style="font-family:var(--mono);color:var(--primary);font-weight:700;margin-bottom:16px;">${a.id}</div>
+      <div class="grid2" style="font-size:13.5px;">
+        <div><b>नाम:</b> ${a.fullName}</div>
+        <div><b>पिता/पति का नाम:</b> ${a.parentName}</div>
+        <div><b>जन्म तिथि:</b> ${a.dob}</div>
+        <div><b>लिंग:</b> ${a.gender}</div>
+        <div><b>मोबाइल:</b> ${a.mobile}</div>
+        <div><b>ईमेल:</b> ${a.email||'—'}</div>
+        <div><b>आधार:</b> ${a.aadhaar}</div>
+        <div><b>राज्य/जिला:</b> ${a.state}, ${a.district}</div>
+      </div>
+      <div style="font-size:13.5px;margin-top:10px;"><b>पता:</b> ${a.address}</div>
+      <div style="margin-top:10px;font-size:13.5px;"><b>स्थिति:</b> <span class="status-badge status-${a.status}">${a.status}</span></div>
+      <h4 style="margin-top:20px;margin-bottom:0;">अपलोड दस्तावेज़</h4>
+      <div class="doc-preview-row">
+        ${docList.length? docList.map(f=>`
+          <div class="dp">
+            ${ (f.type&&f.type.startsWith('image/')) ? `<img src="${f.dataUrl}">` : `<div style="width:90px;height:90px;border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:28px;background:var(--surface-2);">📄</div>`}
+            <div class="nm">${f.name}</div>
+            <a href="${f.dataUrl}" download="${f.name}" class="btn btn-outline" style="padding:4px 8px;font-size:10px;margin-top:4px;">Download</a>
+          </div>`).join('') : '<p style="font-size:13px;color:var(--text-muted);">कोई दस्तावेज़ अपलोड नहीं किया गया</p>'}
+      </div>
+    `);
+    $('#modalCloseBtn').addEventListener('click', closeModal);
+  }
+  $('#adminSearch').addEventListener('input', draw);
+  $('#adminSvcFilter').addEventListener('change', draw);
+  $('#adminStatusFilter').addEventListener('change', draw);
+  load();
+}
+</script>
+</body>
+</html>
